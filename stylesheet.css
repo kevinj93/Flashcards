@@ -18,7 +18,12 @@
       flex-wrap: wrap;
     }
 
-
+    @media (max-width: 800px) {
+        .container {
+            flex-direction: row;
+            max-width: 100vw;
+        }
+    }
     .flip-card, .flip-card-front, .flip-card-back, .flip-card-inner{
     display:flex;
     border-radius: 5px;
