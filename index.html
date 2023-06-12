@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="stylesheet.css">
   <title>Flashcards Game</title>
+  
 </head>
 <body>
 <h1>Flashcards quiz</h1>
@@ -180,6 +181,32 @@
   </div>
 
 </div>
+ <script type="module">
+ 
+  window.onload = function(){
+  fetch('./capitals.json')
+  .then((response) => response.json())
+  .then((data) => {
+  var jsonidx = (Math.floor(Math.random() * (data.length-15)));
+  //var randArr = Array.from({length: 15}, () => Math.floor(Math.random() * jsonidx));
+ 
+  for (let i = 0; i < 15; i++){
+  const name = document.getElementsByClassName("flip-card-inner")[i];
+  name.getElementsByClassName("flip-card-front")[0].innerHTML = "<h2>" + data[jsonidx].country + "</h2>";
+  name.getElementsByClassName("flip-card-back")[0].innerHTML = "<h2>" + data[jsonidx].city + "</h2>";
+  jsonidx++;
+  }
+  
+  
+  const result = data;
+  console.log(result[0].country);
+  })
+  
+  }
+  
+  
+  
+  </script>
 
 </body>
 </html>
