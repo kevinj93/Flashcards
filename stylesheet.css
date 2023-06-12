@@ -1,0 +1,71 @@
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-image: url("./World_map_blank_without_borders.svg.png");
+      background-size: 60vw;
+      background-repeat: repeat;
+      background-position: center;
+    }
+
+    .container{
+      display: flex;
+      max-width: 50vw;
+      max-height: 50vh;
+      flex-wrap: wrap;
+    }
+
+
+    .flip-card, .flip-card-front, .flip-card-back, .flip-card-inner{
+    display:flex;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+    .flip-card {
+        margin: 5px;
+        background-color: transparent;
+        width: 140px;
+        height: 140px;
+    }
+
+    .flip-card-inner {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+
+    .flip-card:active .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+        color: black;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        justify-items: center;
+        justify-content: center;
+    }
+
+    .flip-card-front, .flip-card-back
+    {background-color: #f5f5f5 }
+
+    .flip-card-front {
+        color: black;
+
+    }
+
+    .flip-card-back {
+        background-color: #f5f5f5;
+        transform: rotateY(180deg);
+    }
